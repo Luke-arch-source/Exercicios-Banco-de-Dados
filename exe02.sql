@@ -1,0 +1,31 @@
+CREATE DATABASE db_produtos;
+USE db_produtos;
+
+CREATE TABLE tb_produtos(
+	id BIGINT AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    quantia INT,
+    anossuporte INT,
+    preco DECIMAL NOT NULL,
+    PRIMARY KEY(id)
+
+
+
+);
+
+
+
+INSERT INTO tb_produtos(nome, quantia, anossuporte, preco) 
+VALUES ("TV 4K", 400, 10, 80000.00),
+("PS3 COM 5 CONTROLES", 200, 8, 2500.00),
+("PS4 COM 10 CONTROLES", 800, 15, 10000.00),
+("NOTEBOOK WINDOWS 11", 760, 6, 28600.00),
+("PC GAMER COM CONTROLE DE PS4 COM E SEM FIO", 200, 6, 30000.00),
+("PS2 COM TV EM HD E COM 400 JOGOS", 400, 5, 300.00),
+("PS2 COM 20 JOGOS, 4 CONTROLES E 8 MEMORY CARDS COM 256MB", 500, 8, 40.00),
+("PS3 COM 800 JOGOS E DOIS CONTROLES", 500, 8, 400.00);
+
+SELECT * FROM tb_produtos WHERE preco > 500;
+SELECT * FROM tb_produtos WHERE preco < 500;
+UPDATE tb_produtos SET preco = 300.00 WHERE id = 4;
+SELECT * FROM tb_produtos;
